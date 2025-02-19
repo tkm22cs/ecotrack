@@ -364,23 +364,30 @@ footer {
     }
 }
 
-/* Document Section Styles */
+/* Document Section Styles - Updated for GitHub Pages compatibility */
+#documents {
+    padding: 4rem 2rem;
+    background-color: var(--background-color);
+}
+
 .doc-list {
     max-width: 800px;
     margin: 2rem auto;
-    background: var(--card-bg);
+    background: #ffffff; /* Explicit color instead of var() */
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .doc-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 1.5rem;
+    padding: 1.5rem 2rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s ease;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
 }
 
 .doc-item:last-child {
@@ -388,7 +395,7 @@ footer {
 }
 
 .doc-item:hover {
-    background-color: rgba(46, 213, 115, 0.05);
+    background-color: #f8fff9;
 }
 
 .doc-info {
@@ -399,15 +406,17 @@ footer {
 
 .doc-icon {
     font-size: 1.5rem;
+    display: inline-block;
 }
 
 .doc-title {
     font-weight: 500;
-    color: var(--text-color);
+    color: #1e293b;
+    font-size: 1rem;
 }
 
 .doc-link {
-    color: var(--primary-color);
+    color: #2ed573;
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
@@ -416,19 +425,30 @@ footer {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    background-color: transparent;
 }
 
 .doc-link:hover {
-    background: var(--primary-color);
-    color: white;
+    background-color: #2ed573;
+    color: #ffffff;
 }
 
 .doc-link .arrow {
     transition: transform 0.3s ease;
+    display: inline-block;
 }
 
 .doc-link:hover .arrow {
     transform: translateX(4px);
+}
+
+/* Make sure section heading matches other sections */
+#documents h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1e293b;
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
 /* Responsive adjustments */
@@ -437,10 +457,20 @@ footer {
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
+        padding: 1.2rem 1.5rem;
     }
 
     .doc-link {
         width: 100%;
         justify-content: center;
+        padding: 0.8rem 1rem;
+    }
+
+    .doc-title {
+        font-size: 0.95rem;
+    }
+
+    #documents {
+        padding: 3rem 1rem;
     }
 }
